@@ -1,0 +1,1425 @@
+{
+  "name": "sample/sample.proto",
+  "pb_package": "sample",
+  "dependencyList": [
+    "google/api/annotations.proto"
+  ],
+  "publicDependencyList": [],
+  "weakDependencyList": [],
+  "messageTypeList": [
+    {
+      "name": "Embedded",
+      "fieldList": [
+        {
+          "name": "progress",
+          "number": 1,
+          "label": 1,
+          "type": 3,
+          "oneofIndex": 0,
+          "jsonName": "progress"
+        },
+        {
+          "name": "note",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "oneofIndex": 0,
+          "jsonName": "note"
+        }
+      ],
+      "extensionList": [],
+      "nestedTypeList": [],
+      "enumTypeList": [],
+      "extensionRangeList": [],
+      "oneofDeclList": [
+        {
+          "name": "mark"
+        }
+      ],
+      "reservedRangeList": [],
+      "reservedNameList": []
+    },
+    {
+      "name": "SimpleMessage",
+      "fieldList": [
+        {
+          "name": "id",
+          "number": 1,
+          "label": 1,
+          "type": 9,
+          "jsonName": "id"
+        },
+        {
+          "name": "num",
+          "number": 2,
+          "label": 1,
+          "type": 3,
+          "jsonName": "num"
+        },
+        {
+          "name": "line_num",
+          "number": 3,
+          "label": 1,
+          "type": 3,
+          "oneofIndex": 0,
+          "jsonName": "lineNum"
+        },
+        {
+          "name": "lang",
+          "number": 4,
+          "label": 1,
+          "type": 9,
+          "oneofIndex": 0,
+          "jsonName": "lang"
+        },
+        {
+          "name": "status",
+          "number": 5,
+          "label": 1,
+          "type": 11,
+          "typeName": ".sample.Embedded",
+          "jsonName": "status"
+        },
+        {
+          "name": "en",
+          "number": 6,
+          "label": 1,
+          "type": 3,
+          "oneofIndex": 1,
+          "jsonName": "en"
+        },
+        {
+          "name": "no",
+          "number": 7,
+          "label": 1,
+          "type": 11,
+          "typeName": ".sample.Embedded",
+          "oneofIndex": 1,
+          "jsonName": "no"
+        }
+      ],
+      "extensionList": [],
+      "nestedTypeList": [],
+      "enumTypeList": [],
+      "extensionRangeList": [],
+      "oneofDeclList": [
+        {
+          "name": "code"
+        },
+        {
+          "name": "ext"
+        }
+      ],
+      "reservedRangeList": [],
+      "reservedNameList": []
+    }
+  ],
+  "enumTypeList": [],
+  "serviceList": [
+    {
+      "name": "EchoService",
+      "methodList": [
+        {
+          "name": "Echo",
+          "inputType": ".sample.SimpleMessage",
+          "outputType": ".sample.SimpleMessage",
+          "options": {
+            "deprecated": false,
+            "idempotencyLevel": 0,
+            "uninterpretedOptionList": [],
+            "http": {
+              "selector": "",
+              "get": "",
+              "put": "",
+              "post": "/v1/example/echo/{id}",
+              "pb_delete": "",
+              "patch": "",
+              "body": "",
+              "additionalBindingsList": [
+                {
+                  "selector": "",
+                  "get": "/v1/example/echo/{id}/{num}",
+                  "put": "",
+                  "post": "",
+                  "pb_delete": "",
+                  "patch": "",
+                  "body": "",
+                  "additionalBindingsList": []
+                },
+                {
+                  "selector": "",
+                  "get": "/v1/example/echo/{id}/{num}/{lang}",
+                  "put": "",
+                  "post": "",
+                  "pb_delete": "",
+                  "patch": "",
+                  "body": "",
+                  "additionalBindingsList": []
+                },
+                {
+                  "selector": "",
+                  "get": "/v1/example/echo1/{id}/{line_num}/{status.note}",
+                  "put": "",
+                  "post": "",
+                  "pb_delete": "",
+                  "patch": "",
+                  "body": "",
+                  "additionalBindingsList": []
+                },
+                {
+                  "selector": "",
+                  "get": "/v1/example/echo2/{no.note}",
+                  "put": "",
+                  "post": "",
+                  "pb_delete": "",
+                  "patch": "",
+                  "body": "",
+                  "additionalBindingsList": []
+                }
+              ]
+            }
+          },
+          "clientStreaming": false,
+          "serverStreaming": false
+        },
+        {
+          "name": "EchoBody",
+          "inputType": ".sample.SimpleMessage",
+          "outputType": ".sample.SimpleMessage",
+          "options": {
+            "deprecated": false,
+            "idempotencyLevel": 0,
+            "uninterpretedOptionList": [],
+            "http": {
+              "selector": "",
+              "get": "",
+              "put": "",
+              "post": "/v1/example/echo_body",
+              "pb_delete": "",
+              "patch": "",
+              "body": "*",
+              "additionalBindingsList": []
+            }
+          },
+          "clientStreaming": false,
+          "serverStreaming": false
+        },
+        {
+          "name": "EchoDelete",
+          "inputType": ".sample.SimpleMessage",
+          "outputType": ".sample.SimpleMessage",
+          "options": {
+            "deprecated": false,
+            "idempotencyLevel": 0,
+            "uninterpretedOptionList": [],
+            "http": {
+              "selector": "",
+              "get": "",
+              "put": "",
+              "post": "",
+              "pb_delete": "/v1/example/echo_delete",
+              "patch": "",
+              "body": "",
+              "additionalBindingsList": []
+            }
+          },
+          "clientStreaming": false,
+          "serverStreaming": false
+        },
+        {
+          "name": "Sample",
+          "inputType": ".sample.SimpleMessage",
+          "outputType": ".sample.SimpleMessage",
+          "options": {
+            "deprecated": false,
+            "idempotencyLevel": 0,
+            "uninterpretedOptionList": []
+          },
+          "clientStreaming": false,
+          "serverStreaming": false
+        }
+      ]
+    }
+  ],
+  "extensionList": [],
+  "options": {
+    "javaPackage": "my.sample",
+    "javaMultipleFiles": false,
+    "javaStringCheckUtf8": false,
+    "optimizeFor": 1,
+    "ccGenericServices": false,
+    "javaGenericServices": false,
+    "pyGenericServices": false,
+    "phpGenericServices": false,
+    "deprecated": false,
+    "ccEnableArenas": false,
+    "uninterpretedOptionList": []
+  },
+  "sourceCodeInfo": {
+    "locationList": [
+      {
+        "pathList": [],
+        "spanList": [
+          0,
+          0,
+          75,
+          1
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          12
+        ],
+        "spanList": [
+          0,
+          0,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          2
+        ],
+        "spanList": [
+          6,
+          0,
+          15
+        ],
+        "leadingComments": " Echo Service\n\n Echo Service API consists of a single service which returns\n a message.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          8
+        ],
+        "spanList": [
+          8,
+          0,
+          34
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          8,
+          1
+        ],
+        "spanList": [
+          8,
+          0,
+          34
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          3,
+          0
+        ],
+        "spanList": [
+          10,
+          0,
+          38
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0
+        ],
+        "spanList": [
+          13,
+          0,
+          18,
+          1
+        ],
+        "leadingComments": " Embedded represents a message embedded in SimpleMessage.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          1
+        ],
+        "spanList": [
+          13,
+          8,
+          16
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          8,
+          0
+        ],
+        "spanList": [
+          14,
+          4,
+          17,
+          5
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          8,
+          0,
+          1
+        ],
+        "spanList": [
+          14,
+          10,
+          14
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          0
+        ],
+        "spanList": [
+          15,
+          8,
+          27
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          0,
+          5
+        ],
+        "spanList": [
+          15,
+          8,
+          13
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          0,
+          1
+        ],
+        "spanList": [
+          15,
+          14,
+          22
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          0,
+          3
+        ],
+        "spanList": [
+          15,
+          25,
+          26
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          1
+        ],
+        "spanList": [
+          16,
+          8,
+          24
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          1,
+          5
+        ],
+        "spanList": [
+          16,
+          8,
+          14
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          1,
+          1
+        ],
+        "spanList": [
+          16,
+          15,
+          19
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          0,
+          2,
+          1,
+          3
+        ],
+        "spanList": [
+          16,
+          22,
+          23
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1
+        ],
+        "spanList": [
+          21,
+          0,
+          34,
+          1
+        ],
+        "leadingComments": " SimpleMessage represents a simple message sent to the Echo service.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          1
+        ],
+        "spanList": [
+          21,
+          8,
+          21
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          0
+        ],
+        "spanList": [
+          23,
+          4,
+          18
+        ],
+        "leadingComments": " Id represents the message identifier.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          0,
+          4
+        ],
+        "spanList": [
+          23,
+          4,
+          21,
+          23
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          0,
+          5
+        ],
+        "spanList": [
+          23,
+          4,
+          10
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          0,
+          1
+        ],
+        "spanList": [
+          23,
+          11,
+          13
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          0,
+          3
+        ],
+        "spanList": [
+          23,
+          16,
+          17
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          1
+        ],
+        "spanList": [
+          24,
+          4,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          1,
+          4
+        ],
+        "spanList": [
+          24,
+          4,
+          23,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          1,
+          5
+        ],
+        "spanList": [
+          24,
+          4,
+          9
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          1,
+          1
+        ],
+        "spanList": [
+          24,
+          10,
+          13
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          1,
+          3
+        ],
+        "spanList": [
+          24,
+          16,
+          17
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          8,
+          0
+        ],
+        "spanList": [
+          25,
+          4,
+          28,
+          5
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          8,
+          0,
+          1
+        ],
+        "spanList": [
+          25,
+          10,
+          14
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          2
+        ],
+        "spanList": [
+          26,
+          8,
+          27
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          2,
+          5
+        ],
+        "spanList": [
+          26,
+          8,
+          13
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          2,
+          1
+        ],
+        "spanList": [
+          26,
+          14,
+          22
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          2,
+          3
+        ],
+        "spanList": [
+          26,
+          25,
+          26
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          3
+        ],
+        "spanList": [
+          27,
+          8,
+          24
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          3,
+          5
+        ],
+        "spanList": [
+          27,
+          8,
+          14
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          3,
+          1
+        ],
+        "spanList": [
+          27,
+          15,
+          19
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          3,
+          3
+        ],
+        "spanList": [
+          27,
+          22,
+          23
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          4
+        ],
+        "spanList": [
+          29,
+          4,
+          24
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          4,
+          4
+        ],
+        "spanList": [
+          29,
+          4,
+          28,
+          5
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          4,
+          6
+        ],
+        "spanList": [
+          29,
+          4,
+          12
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          4,
+          1
+        ],
+        "spanList": [
+          29,
+          13,
+          19
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          4,
+          3
+        ],
+        "spanList": [
+          29,
+          22,
+          23
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          8,
+          1
+        ],
+        "spanList": [
+          30,
+          4,
+          33,
+          5
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          8,
+          1,
+          1
+        ],
+        "spanList": [
+          30,
+          10,
+          13
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          5
+        ],
+        "spanList": [
+          31,
+          8,
+          21
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          5,
+          5
+        ],
+        "spanList": [
+          31,
+          8,
+          13
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          5,
+          1
+        ],
+        "spanList": [
+          31,
+          14,
+          16
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          5,
+          3
+        ],
+        "spanList": [
+          31,
+          19,
+          20
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          6
+        ],
+        "spanList": [
+          32,
+          8,
+          24
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          6,
+          6
+        ],
+        "spanList": [
+          32,
+          8,
+          16
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          6,
+          1
+        ],
+        "spanList": [
+          32,
+          17,
+          19
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          4,
+          1,
+          2,
+          6,
+          3
+        ],
+        "spanList": [
+          32,
+          22,
+          23
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0
+        ],
+        "spanList": [
+          37,
+          0,
+          75,
+          1
+        ],
+        "leadingComments": " Echo service responds to incoming echo requests.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          1
+        ],
+        "spanList": [
+          37,
+          8,
+          19
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          0
+        ],
+        "spanList": [
+          42,
+          4,
+          58,
+          5
+        ],
+        "leadingComments": " Echo method receives a simple message and returns it.\n\n The message posted as the id parameter will also be\n returned.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          0,
+          1
+        ],
+        "spanList": [
+          42,
+          8,
+          12
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          0,
+          2
+        ],
+        "spanList": [
+          42,
+          13,
+          26
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          0,
+          3
+        ],
+        "spanList": [
+          42,
+          37,
+          50
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          0,
+          4
+        ],
+        "spanList": [
+          43,
+          8,
+          57,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          0,
+          4,
+          72295728
+        ],
+        "spanList": [
+          43,
+          8,
+          57,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          1
+        ],
+        "spanList": [
+          60,
+          4,
+          65,
+          5
+        ],
+        "leadingComments": " EchoBody method receives a simple message and returns it.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          1,
+          1
+        ],
+        "spanList": [
+          60,
+          8,
+          16
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          1,
+          2
+        ],
+        "spanList": [
+          60,
+          17,
+          30
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          1,
+          3
+        ],
+        "spanList": [
+          60,
+          41,
+          54
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          1,
+          4
+        ],
+        "spanList": [
+          61,
+          8,
+          64,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          1,
+          4,
+          72295728
+        ],
+        "spanList": [
+          61,
+          8,
+          64,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          2
+        ],
+        "spanList": [
+          67,
+          4,
+          71,
+          5
+        ],
+        "leadingComments": " EchoDelete method receives a simple message and returns it.\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          2,
+          1
+        ],
+        "spanList": [
+          67,
+          8,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          2,
+          2
+        ],
+        "spanList": [
+          67,
+          19,
+          32
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          2,
+          3
+        ],
+        "spanList": [
+          67,
+          43,
+          56
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          2,
+          4
+        ],
+        "spanList": [
+          68,
+          8,
+          70,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          2,
+          4,
+          72295728
+        ],
+        "spanList": [
+          68,
+          8,
+          70,
+          18
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          3
+        ],
+        "spanList": [
+          73,
+          4,
+          74,
+          5
+        ],
+        "leadingComments": " No REST endpoint\n",
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          3,
+          1
+        ],
+        "spanList": [
+          73,
+          8,
+          14
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          3,
+          2
+        ],
+        "spanList": [
+          73,
+          15,
+          28
+        ],
+        "leadingDetachedCommentsList": []
+      },
+      {
+        "pathList": [
+          6,
+          0,
+          2,
+          3,
+          3
+        ],
+        "spanList": [
+          73,
+          39,
+          52
+        ],
+        "leadingDetachedCommentsList": []
+      }
+    ]
+  },
+  "syntax": "proto3"
+}

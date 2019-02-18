@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const protocPlugin = require('protoc-plugin')
+
+/**
+ * try this
+ * protoc --plugin=protoc-gen-spring-gateway --proto＿path=proto  --spring-gateway_out=generated sample/sample.proto
+ */
+protocPlugin(protos => protos.map(proto => {
+  console.error(`Working on`, proto)
+  return {
+    name: `${proto.pb_package}.json`,
+    content: JSON.stringify(proto, null, 2)
+  }
+}))
+.then(() => {
+  // I use error, because stdout is used for plugin
+  console.error('Complete.')
+})
+.catch(e => console.error(e))
